@@ -23,11 +23,13 @@ stocks = pd.read_csv('https://raw.githubusercontent.com/dataprofessor/data/maste
 # Row A
 a1, a2, a3 = st.columns(3)
 a1.image(Image.open('F1_logo.png'))
-a2.metric("last race", "Qatar")
+a2.metric("Last race", "Qatar")
 a2.image(Image.open('Qatar.png'))
-a3.metric("Humidity", "86%", "4%")
+a3.metric("World Champion", "Max Verstapen", "454 PTS")
+a3.image(Image.open('Verstappen.png'))
 
 # Row B
+
 b1, b2, b3, b4 = st.columns(4)
 b1.metric("Temperature", "70 °F", "1.2 °F")
 b2.metric("Wind", "9 mph", "-8%")
