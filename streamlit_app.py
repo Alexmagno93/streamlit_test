@@ -51,7 +51,7 @@ with c1:
     legend=None)
 with c2:
     st.markdown('### Bar chart')
-    name = f1['name']
+    name = f1['driver']
     points = f1['points']
     plost.bar(                      # donut charts
         name,
