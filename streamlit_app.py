@@ -31,7 +31,8 @@ a3.image(Image.open('Verstappen.png'))
 # Row B
 
 b1, b2, b3, b4 = st.columns(4)
-b1.metric("Temperature", "70 °F", "1.2 °F")
+b1.metric("Constructors", "Red Bull Racing")
+b1.image(Image.open('RBR.png'))
 b2.metric("Wind", "9 mph", "-8%")
 b3.metric("Humidity", "90%", "100%")
 b4.metric("Humidity", "86%", "100%")
