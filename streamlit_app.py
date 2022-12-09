@@ -51,9 +51,11 @@ with c1:
     legend=None)
 with c2:
     st.markdown('### Bar chart')
-    name = f1['driver']
-    points = f1['points']
-    st.bar_chart(                      # donut charts
-        name,
-        points
-        )
+    #ranking_1 =f1.drop(columns=['team','position'])
+    #ran =ranking_1.set_index('points')
+    #name = f1['driver']
+    #points = f1['points']
+    st.bar_chart(data = f1, 
+                 x = np.array(f1['driver']), 
+                 y = np.array(f1['points']) 
+                 )
