@@ -55,7 +55,7 @@ with c2:
     #ran =ranking_1.set_index('points')
     #name = f1['driver']
     #points = f1['points']
-    st.bar_chart(data = f1, 
+    st.bar_chart( 
                  x = np.array(f1['driver']), 
                  y = np.array(f1['points']) 
                  )
