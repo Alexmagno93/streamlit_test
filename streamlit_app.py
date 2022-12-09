@@ -16,7 +16,7 @@ with open('style.css') as f:
 
 # Data
 seattle_weather = pd.read_csv('https://raw.githubusercontent.com/tvst/plost/master/data/seattle-weather.csv', parse_dates=['date'])
-stocks = pd.read_csv('https://raw.githubusercontent.com/dataprofessor/data/master/stocks_toy.csv')
+stocks = pd.read_csv('ranking.csv')
 # replace the previous data with your own streamed data from API
 
 ### Here starts the web app design
@@ -30,14 +30,12 @@ a3.image(Image.open('Verstappen.png'))
 
 # Row B
 
-b1, b2, b3, b4 = st.columns(4)
+b1, b2,  = st.columns(2)
 b1.metric("Constructors", "Red Bull")
 b1.image(Image.open('RBR.png'))
 b2.metric("Fastest Pit stop", "1.98 Sec", "Mclaren")
 b2.image(Image.open('dan_ric.png'))
 b2.image(Image.open('mclaren.png'))
-b3.metric("Humidity", "90%", "100%")
-b4.metric("Humidity", "86%", "100%")
 
 # Row C
 c1, c2 = st.columns((7,3))
@@ -53,7 +51,7 @@ with c1:
     legend=None)
 with c2:
     st.markdown('### Bar chart')
-    plost.donut_chart(                      # donut charts
+    plost.bar(                      # donut charts
         data=stocks,
-        theta='q2',
-        color='company')
+        theta='points',
+        color='name')
