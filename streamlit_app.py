@@ -53,5 +53,5 @@ with c2:
     st.markdown('### Bar chart')
     plost.bar(                      # donut charts
         data=stocks,
-        theta='points',
-        color='name')
+        y_unit='points',
+        x_unir='name')
