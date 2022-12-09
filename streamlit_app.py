@@ -53,7 +53,7 @@ with c2:
     st.markdown('### Bar chart')
     name = f1['driver']
     points = f1['points']
-    plost.bar_chart(                      # donut charts
+    st.bar_chart(                      # donut charts
         name,
         points
         )
