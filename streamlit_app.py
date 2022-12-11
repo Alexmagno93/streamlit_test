@@ -37,11 +37,12 @@ b2.metric("Fastest Pit stop", "1.98 Sec", "Mclaren")
 b2.image(Image.open('mclaren.png'))
 
 # Row C
-c1,c2 = st.columns((7,3))
+c1,c2 = st.columns((10,3))
 with c1:
     st.markdown('### Bar chart')
     chart_data = pd.DataFrame(index=f1['driver'])
     chart_data['point'] = np.array(f1['points'])
+    chart_data = chart_data.sort_values(by='point' ,ascending= False)
     st.bar_chart(data=chart_data)
     
 #with c2:
