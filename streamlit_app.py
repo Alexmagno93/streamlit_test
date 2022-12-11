@@ -31,15 +31,20 @@ a3.image(Image.open('Verstappen.png'))
 # Row B
 
 b1, b2,  = st.columns(2)
-b1.metric("Constructors", "Red Bull")
+b1.metric("Constructors Champioship", "Red Bull")
 b1.image(Image.open('RBR.png'))
-b2.metric("Fastest Pit stop", "1.98 Sec", "Mclaren")
-b2.image(Image.open('dan_ric.png'))
+b2.write(["Fastest Pit stop", "1.98 Sec", "Mclaren"])
 b2.image(Image.open('mclaren.png'))
 
 # Row C
-c1, c2 = st.columns((7,3))
+c1,c2 = st.columns((7,3))
 with c1:
+    st.markdown('### Bar chart')
+    chart_data = pd.DataFrame(index=f1['driver'])
+    chart_data['point'] = np.array(f1['points'])
+    st.bar_chart(data=chart_data)
+    
+with c2:
     st.markdown('### Heatmap')              # text is created with markdown
     plost.time_hist(                        # histogram
     data=seattle_weather,
@@ -49,9 +54,3 @@ with c1:
     color='temp_max',
     aggregate='median',
     legend=None)
-with c2:
-    st.markdown('### Bar chart')
-    chart_data = pd.DataFrame(index=f1['driver'])
-    chart_data['point'] = np.array(f1['points'])
-    st.bar_chart(                      # donut charts
-        data=chart_data)
