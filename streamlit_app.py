@@ -33,7 +33,7 @@ a3.image(Image.open('Verstappen.png'))
 b1, b2,  = st.columns(2)
 b1.metric("Constructors Champioship", "Red Bull")
 b1.image(Image.open('RBR.png'))
-b2.write(["Fastest Pit stop", "1.98 Sec", "Mclaren"])
+b2.metric("Fastest Pit stop", "1.98 Sec", "Mclaren")
 b2.image(Image.open('mclaren.png'))
 
 # Row C
@@ -44,13 +44,13 @@ with c1:
     chart_data['point'] = np.array(f1['points'])
     st.bar_chart(data=chart_data)
     
-with c2:
-    st.markdown('### Heatmap')              # text is created with markdown
-    plost.time_hist(                        # histogram
-    data=seattle_weather,
-    date='date',
-    x_unit='week',
-    y_unit='day',
-    color='temp_max',
-    aggregate='median',
-    legend=None)
+#with c2:
+    #st.markdown('### Heatmap')              # text is created with markdown
+    #plost.time_hist(                        # histogram
+    #data=seattle_weather,
+    #date='date',
+    #x_unit='week',
+    #y_unit='day',
+    #color='temp_max',
+    #aggregate='median',
+    #legend=None)
