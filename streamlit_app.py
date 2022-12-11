@@ -42,7 +42,7 @@ with c1:
     st.markdown('### Points on drivers championship 2022')
     chart_data = pd.DataFrame(index=f1['driver'])
     chart_data['point'] = np.array(f1['points'])
-    chart_data_1 = chart_data.sort_values(by='driver' ,ascending= False)
+    chart_data_1 = chart_data.sort_values(by=['point'] ,ascending= False)
     st.bar_chart(data=chart_data_1)
     
 #with c2:
